@@ -1,3 +1,3 @@
-var coinery = require('./coinery');
+var coiner = require('./coinery');
 
-console.log(coinery);
+console.log(coiner);
