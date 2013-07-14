@@ -1,0 +1,8 @@
+{
+  "name": "coiner"
+, "version": "0.0.1"
+, "description": "A script to get the latest Bitcoin market data via the bitcoincharts.com API."
+, "dependencies": {
+    "request":  ">2.0.0"
+	}
+}
