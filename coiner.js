@@ -1,7 +1,7 @@
 var request = require('request');
-var source 	= 'http://api.bitcoincharts.com/v1/markets.json';
+var source  = 'http://api.bitcoincharts.com/v1/markets.json';
 
-var coinery = request(source, function(err, res, body) {
+var coiner = request(source, function(err, res, body) {
   if(!err && res.statusCode == 200) {
     var market = {
       virwox: JSON.parse(body)[85],
@@ -14,4 +14,4 @@ var coinery = request(source, function(err, res, body) {
   }
 });
 
-module.exports = coinery;
+module.exports = coiner;
