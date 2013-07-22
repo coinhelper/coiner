@@ -1,15 +1,18 @@
 var request = require('request');
-var source  = 'http://api.bitcoincharts.com/v1/markets.json';
 
-var coiner = request.get(source, function(err, res, body) {
-  console.log('Status: ' + res.statusCode);
-  res.setEncoding('utf8');
-  var markets = {
-    virwox: JSON.parse(body)[85],
-    bitstamp: JSON.parse(body)[100],
-    mtgox: JSON.parse(body)[116]
-  }
-  console.log(markets);
-});
+var coiner = function() {
+  var source  = 'http://api.bitcoincharts.com/v1/markets.json';
+  request.get(source, function(err, res, body) {
+    console.log('Status: ' + res.statusCode);
+    var data = JSON.parse(body);
+    var markets = {
+      virwox: data[85],
+      bitstamp: data[100],
+      mtgox: data[116]
+    }
+    console.log(markets);
+  });
+};
+
 
 module.exports = coiner;
