@@ -1,3 +1,7 @@
 var coiner = require('./coiner');
 
-coiner();
+coiner(function(err, res) {
+  if (!err) {
+    console.log(res);
+  }
+});

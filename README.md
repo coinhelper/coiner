@@ -1,12 +1,18 @@
 # Coiner
 
-A module to simplify using the bitcoincharts.com market API.
+A simpler way of dealing with the markets.json API of bitcoincharts.com. So far only 4 markets are supported but more are added all the time.
 
 ### Usage
 
-Simply call the coiner() function and you will get the JSON for virWox, MtGox and BitStamp (more to come) in JSON form, without having to deal with the clumsy block of hundreds of markets that BitcoinCharts normally returns.
+To print to console:
 
-### Example
+    coiner(function(err, res) {
+      if (!err) {
+	console.log(res);
+      }
+    });
 
-    var coiner = require('./coiner');
-    coiner();
+To stream to a JSON file:
+
+    coiner.write('filename.json');
+
